@@ -6,10 +6,11 @@
     <title>La Plateforme_</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
     <nav class="px-4 bg-white">
-        <a class="navbar-brand fs-4 text-dark" href="#">LPTF</a>
+        <a class="navbar-brand fs-4 text-dark" href="https://laplateforme.io/">LPTF</a>
             <a href="#" class="me-3 text-dark">Accueil</a>
             <a href="#" class="me-3 text-dark">Units</a>
             <a href="#" class="me-3 text-dark">Jobs</a>
@@ -25,23 +26,43 @@
                     <div class="card-body">
                         <h5 class="card-title">Un Papillon</h5>
                         <p class="card-text">Un papillon, c'est un peu comme une chenille, mais avec des ailes. Ne pas ingérer.</p>
-                        <a href="#" class="btn btn-primary w-100">Commander votre propre papillon</a>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalPapillon">
+                            Commander votre propre papillon
+                        </button>
                     </div>
                 </div>
             </div>
 
+            <div class="modal fade" id="modalPapillon" aria-labelledby="modalPapillonLabel" >
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="modalPapillonLabel">Confirmation d'achat</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      Votre commande de papillon a bien été prise en compte !
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Fermer</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             <div class="col-md-6">
-                <div class="p-4 bg-light rounded shadow-sm">
+                <div class="jumbotron p-4 bg-light rounded shadow-sm" id="jumbotron">
                     <h2>Bonjour, monde!</h2>
+                    <img id="random-image" alt="Image aléatoire" width="250" height="100" />
                     <p>Il existe plusieurs visions du terme :</p>
                     <p>Le monde est la matière, l'espace et les phénomènes qui nous sont accessibles par les sens, l'expérience ou la raison.</p>
                     <p>Le sens le plus courant désigne notre planète, la Terre, avec ses habitants, et son environnement plus ou moins naturel.</p>
-                    <p class="text-muted"><i>Le sens étendu désigne l'univers dans son ensemble.</i></p>
-                    <button class="btn btn-danger">Rebooter le Monde</button>
-                    <div class="spinner-border text-primary ms-2" role="status"></div>
+                    <p class="text-muted" id="citations"><i>Le sens étendu désigne l'univers dans son ensemble.</i></p>
+                    <button class="btn btn-danger" id="jumbotron-button">Rebooter le Monde</button>
+                    <div class="spinner-border text-primary ms-2 visually-hidden" role="status"></div>
                 </div>
             </div>
-            <!-- Menu latéral -->
+            
             <div class="col-md-3">
                 <ul class="list-group">
                     <li class="list-group-item">Limbes</li>
@@ -98,3 +119,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
+<script src="script.js" defer></script>
